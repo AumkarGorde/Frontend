@@ -1,0 +1,18 @@
+<header>
+  <h1>Customer Application</h1>
+</header>
+
+<div class="navbar">
+  <ul>
+    <li><a [routerLink]="['Home']">Home</a></li>
+    <li><a [routerLink]="['Customer']">Customer</a></li>
+    <li><a [routerLink]="['Supplier']">Supplier</a></li>
+  </ul>
+</div>
+<div class="content">
+  <router-outlet></router-outlet>
+</div>
+
+<footer>
+  <p>&copy; 2023 My Website. All rights reserved.</p>
+</footer>
