@@ -1,0 +1,25 @@
+Welcome to {{title}}
+<br><br>
+<label for="fname">Id :</label>
+<input [(ngModel)]="CustomerModel.CustomerId" type="text" id="fname" name="fname"><br><br>
+<label for="lname">Name :</label>
+<input [(ngModel)]="CustomerModel.CustomerName" type="text" id="lname" name="lname"><br><br>
+<label for="llocation">Location :</label>
+<input [(ngModel)]="CustomerModel.CustomerLocation" type="text" id="lname" name="lname"><br><br>
+<input (click)="Add()" type="submit" value="Submit"><br><br>
+<br><br>
+Hi {{CustomerModel.CustomerName}}, your Id is {{CustomerModel.CustomerId}} and location is {{CustomerModel.CustomerLocation}}
+<br><br>
+<br><br>
+<table>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Location</th>
+    </tr>
+    <tr *ngFor="let cust of CustomerModelList">
+      <td>{{cust.CustomerId}}</td>
+      <td>{{cust.CustomerName}}</td>
+      <td>{{cust.CustomerLocation}}</td>
+    </tr>
+</table>
