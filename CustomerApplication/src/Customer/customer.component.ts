@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Injector, Optional } from '@angular/core';
+import { BaseLogger } from 'src/Utility/CustomerApp.logger';
 import { Customer } from './customer.model';
 
 @Component({
@@ -6,6 +7,14 @@ import { Customer } from './customer.model';
   styleUrls: ['./customer.component.css'],
 })
 export class CustomerComponent {
+  /**
+   *
+   */
+  _loggerObj: BaseLogger = null;
+  constructor(@Optional() _injector: Injector) {
+    this._loggerObj = _injector.get('DB');
+    this._loggerObj.Log();
+  }
   title = 'Customer Component';
   CustomerModel: Customer = new Customer();
   CustomerModelList: Array<Customer> = new Array<Customer>();
