@@ -17,7 +17,12 @@ Welcome to {{title}}
 Hi {{CustomerModel.CustomerName}}, your Id is {{CustomerModel.CustomerId}} and location is {{CustomerModel.CustomerLocation}}
 <br><br>
 <br><br>
-<table>
+
+<grid-ui [grid-column]="[{'colName':'Id'},{'colName':'Name'},{'colName':'Location'}]" 
+[grid-data]="CustomerModelList"
+(grid-select)="SelectCustomer($event)"></grid-ui>
+
+<!-- <table>
     <tr>
       <th>Id</th>
       <th>Name</th>
@@ -28,4 +33,4 @@ Hi {{CustomerModel.CustomerName}}, your Id is {{CustomerModel.CustomerId}} and l
       <td>{{cust.CustomerName}}</td>
       <td>{{cust.CustomerLocation}}</td>
     </tr>
-</table>
+</table> -->
