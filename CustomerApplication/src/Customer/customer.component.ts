@@ -24,6 +24,10 @@ export class CustomerComponent {
     this.CustomerModel = new Customer();
   }
 
+  SelectCustomer(cusObj: Customer) {
+    this.CustomerModel = cusObj;
+  }
+
   hasErrors(controlName: string, validatorType: string): boolean {
     return this.CustomerModel.formCusGroup.controls[controlName].hasError(
       validatorType

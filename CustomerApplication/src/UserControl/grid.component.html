@@ -1,0 +1,15 @@
+<table>
+    <tr>
+       <th *ngFor="let col of gridColumns">
+          {{col.colName}}
+       </th>
+    </tr>
+    <tr *ngFor="let colObj of gridData">
+       <td>{{colObj.CustomerId}}</td>
+       <td>{{colObj.CustomerName}}</td>
+       <td>{{colObj.CustomerLocation}}</td>
+       <td>
+          <a (click)="SelectGrid(colObj)" [routerLink]="['/Customer/Add']">select</a>
+       </td>
+    </tr>
+ </table>
