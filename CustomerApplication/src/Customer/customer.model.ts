@@ -1,9 +1,8 @@
 import {
-  NgForm,
   FormGroup,
   FormControl,
   Validators,
-  FormBuilder, // helps to create a tree obj model of fromGroup, FromControl and Validators
+  FormBuilder,
 } from '@angular/forms';
 
 export class Customer {

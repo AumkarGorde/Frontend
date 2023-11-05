@@ -7,7 +7,9 @@ Welcome to {{title}}
 <input [(ngModel)]="CustomerModel.CustomerName" formControlName="CustomerNameControl" type="text" id="lname" name="lname"><br><br>
 <label for="llocation">Location :</label>
 <input [(ngModel)]="CustomerModel.CustomerLocation" [ngModelOptions]="{standalone: true}" type="text" id="lname" name="lname"><br><br>
-<input  [disabled]="!(CustomerModel.formCusGroup.valid)" (click)="Add()" type="submit" value="Submit"><br><br>
+<input  [disabled]="!(CustomerModel.formCusGroup.valid)" (click)="Add()" type="submit" value="Submit">
+<button [disabled]="Disable" (click)="PostToServer(CustomerModel)" type="button">Post</button>
+<button (click)="GetAllFromServer()" type="button">Get</button>
 </form>
 <div *ngIf="CustomerModel.formCusGroup.dirty" [hidden]="!(hasErrors('CustomerIdControl', 'pattern'))">Customer Id is invalid</div>
 <div *ngIf="CustomerModel.formCusGroup.dirty" [hidden]="!(hasErrors('CustomerNameControl','required'))">Customer Id is required</div>
